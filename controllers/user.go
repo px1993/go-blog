@@ -2,7 +2,7 @@ package controllers
 
 import (
         "github.com/astaxie/beego"
-        "quickstart/models"
+        "blog/models"
 )
 
 var loginUserId int
@@ -13,7 +13,7 @@ type UserController struct{
 
 func (this *UserController) Prepare(){
         userId := this.GetSession("userLogin")
-
+        
         if userId == nil {
                 this.Redirect("/auth/login",302)
         } else {
